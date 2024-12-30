@@ -1,0 +1,111 @@
+
+
+models:
+  - name: segmentation_responsiveness
+    description: measure the segmentation and responsiveness of customers respond to promotional offers
+    columns:
+      - name: gender
+        description: Gender of the customer.
+        data_type: text
+        data_tests:
+          - not_null
+          - accepted_values:
+              values:
+                - M
+                - F
+                - O
+                - N/A
+      - name: age
+        description: Age of the customer.
+        data_type: integer
+        data_tests:
+          - not_null
+      - name: average_income
+        description: Average income of the customers.
+        data_type: numeric
+        data_tests:
+          - not_null        
+      - name: total_received
+        description: Total of received offers.
+        data_type: numeric
+        data_tests:
+          - not_null  
+      - name: total_viewed
+        description: Total of viewed offers.
+        data_type: numeric
+        data_tests:
+          - not_null  
+      - name: total_completed
+        description: Total of completed offers.
+        data_type: numeric
+        data_tests:
+          - not_null      
+      - name: percentage_viewed_of_received
+        description: Percentage of viewed offers relative to received offers.
+        data_type: numeric
+        data_tests:
+          - not_null  
+      - name: percentage_completed_of_viewed
+        description: Percentage of completed offers relative to viewed offers.
+        data_type: numeric
+        data_tests:
+          - not_null 
+      - name: percentage_completed_of_received
+        description: Percentage of completed offers relative to received offers.
+        data_type: numeric
+        data_tests:
+          - not_null 
+  - name: channel_effectiveness
+    description: measure how do communication channels impact customer response rates to offers.
+    columns:
+      - name: offer_channel
+        description: A list of channels through which the offer was received.
+        data_type: text
+        data_tests:
+          - not_null
+          - accepted_values:
+              values:
+                - email
+                - mobile
+                - social
+                - web
+      - name: offer_type
+        description: Type of offer.
+        data_type: text
+        data_tests:
+          - not_null
+          - accepted_values:
+              values:
+                - bogo
+                - discount
+                - informational
+      - name: total_transactions
+        description: Total transactions.
+        data_type: numeric
+        data_tests:
+          - not_null  
+      - name: completed_offers
+        description: Total completed offers.
+        data_type: numeric
+        data_tests:
+          - not_null 
+      - name: conversion_rate
+        description: onversion rate for completed offers, calculated as the proportion of completed transactions over the total transactions.
+        data_type: numeric
+        data_tests:
+          - not_null 
+      - name: average_difficulty_rank
+        description: Average difficulty rank for the offers.
+        data_type: numeric
+        data_tests:
+          - not_null
+      - name: average_duration
+        description: Average duration of the offers.
+        data_type: numeric
+        data_tests:
+          - not_null
+      - name: average_reward
+        description: Average reward associated with the offers.
+        data_type: numeric
+        data_tests:
+          - not_null
